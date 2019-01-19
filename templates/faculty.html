@@ -1,0 +1,33 @@
+
+<!-- retrieve navBar from master page body replace, extend used for navbar feature from master.html -->
+
+<!-- below is jinja2 syntax -->
+{% extends 'master.html' %}
+
+
+{% block mybody %}
+
+<!-- read data from data.py and render_template time load  -->
+
+<h1>My Faculties</h1>
+
+
+
+
+<!-- below is jinja2 syntax for for looping -->
+  {% for i in facultyList %}
+
+  <div class="card">
+    <div class="card-header">
+      {{i.dept}}
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{i.name}}</h5>
+      <p class="card-text">{{i.email}}</p>
+      <a href="#" class="btn btn-primary">Call : {{i.mob}} </a>
+    </div>
+  </div>
+
+  {% endfor %}
+
+{% endblock %}
